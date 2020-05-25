@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtPolynomial = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRadomPolymial = new System.Windows.Forms.Button();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.radomPolymialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,16 +61,17 @@
             this.txtPolynomial.Size = new System.Drawing.Size(523, 22);
             this.txtPolynomial.TabIndex = 1;
             // 
-            // button1
+            // btnRadomPolymial
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(663, 49);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 22);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Radom Polymial";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRadomPolymial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRadomPolymial.Location = new System.Drawing.Point(663, 49);
+            this.btnRadomPolymial.Name = "btnRadomPolymial";
+            this.btnRadomPolymial.Size = new System.Drawing.Size(125, 22);
+            this.btnRadomPolymial.TabIndex = 2;
+            this.btnRadomPolymial.Text = "Radom Polymial";
+            this.btnRadomPolymial.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnRadomPolymial.UseVisualStyleBackColor = true;
+            this.btnRadomPolymial.Click += new System.EventHandler(this.btnRadomPolymial_Click);
             // 
             // menuStrip2
             // 
@@ -79,7 +80,7 @@
             this.settingToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(800, 30);
             this.menuStrip2.TabIndex = 5;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -88,13 +89,13 @@
             this.settingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.radomPolymialToolStripMenuItem});
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
             this.settingToolStripMenuItem.Text = "Setting";
             // 
             // radomPolymialToolStripMenuItem
             // 
             this.radomPolymialToolStripMenuItem.Name = "radomPolymialToolStripMenuItem";
-            this.radomPolymialToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.radomPolymialToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
             this.radomPolymialToolStripMenuItem.Text = "Radom Polymial";
             this.radomPolymialToolStripMenuItem.Click += new System.EventHandler(this.radomPolymialToolStripMenuItem_Click);
             // 
@@ -149,7 +150,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRadomPolymial);
             this.Controls.Add(this.txtPolynomial);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
@@ -166,7 +167,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPolynomial;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRadomPolymial;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem radomPolymialToolStripMenuItem;

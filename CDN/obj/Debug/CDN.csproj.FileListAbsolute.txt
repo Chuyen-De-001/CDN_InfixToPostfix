@@ -8,3 +8,13 @@ C:\Users\ADMIN\source\repos\CDN\CDN\obj\Debug\CDN.exe
 C:\Users\ADMIN\source\repos\CDN\CDN\obj\Debug\CDN.pdb
 C:\Users\ADMIN\source\repos\CDN\CDN\obj\Debug\CDN.Setting.resources
 C:\Users\ADMIN\source\repos\CDN\CDN\obj\Debug\CDN.csprojAssemblyReference.cache
+D:\CODE\C#\CDN_InfixToPostfix\CDN\obj\Debug\CDN.csprojAssemblyReference.cache
+D:\CODE\C#\CDN_InfixToPostfix\CDN\obj\Debug\CDN.Form1.resources
+D:\CODE\C#\CDN_InfixToPostfix\CDN\obj\Debug\CDN.Properties.Resources.resources
+D:\CODE\C#\CDN_InfixToPostfix\CDN\obj\Debug\CDN.Setting.resources
+D:\CODE\C#\CDN_InfixToPostfix\CDN\obj\Debug\CDN.csproj.GenerateResource.cache
+D:\CODE\C#\CDN_InfixToPostfix\CDN\obj\Debug\CDN.exe
+D:\CODE\C#\CDN_InfixToPostfix\CDN\obj\Debug\CDN.pdb
+D:\CODE\C#\CDN_InfixToPostfix\CDN\bin\Debug\CDN.exe.config
+D:\CODE\C#\CDN_InfixToPostfix\CDN\bin\Debug\CDN.exe
+D:\CODE\C#\CDN_InfixToPostfix\CDN\bin\Debug\CDN.pdb
