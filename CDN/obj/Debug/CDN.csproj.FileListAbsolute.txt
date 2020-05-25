@@ -1,0 +1,10 @@
+C:\Users\ADMIN\source\repos\CDN\CDN\bin\Debug\CDN.exe.config
+C:\Users\ADMIN\source\repos\CDN\CDN\bin\Debug\CDN.exe
+C:\Users\ADMIN\source\repos\CDN\CDN\bin\Debug\CDN.pdb
+C:\Users\ADMIN\source\repos\CDN\CDN\obj\Debug\CDN.Form1.resources
+C:\Users\ADMIN\source\repos\CDN\CDN\obj\Debug\CDN.Properties.Resources.resources
+C:\Users\ADMIN\source\repos\CDN\CDN\obj\Debug\CDN.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\CDN\CDN\obj\Debug\CDN.exe
+C:\Users\ADMIN\source\repos\CDN\CDN\obj\Debug\CDN.pdb
+C:\Users\ADMIN\source\repos\CDN\CDN\obj\Debug\CDN.Setting.resources
+C:\Users\ADMIN\source\repos\CDN\CDN\obj\Debug\CDN.csprojAssemblyReference.cache
