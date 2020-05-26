@@ -34,5 +34,27 @@ namespace CDN
             String Dathuc = functions.taoDathuc(int.Parse(lstsetting[0]), int.Parse(lstsetting[1]), int.Parse(lstsetting[2]));
             txtPolynomial.Text = Dathuc;
         }
+
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+            if(txtPolynomial.Text == "")
+            {
+                MessageBox.Show("Chưa nhập đa thức", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                txtResult.Text = new Entity.Array().InfixToPostfix(txtPolynomial.Text);
+            }
+        }
+        private void settingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void đoThờiGianChạyHàmToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Runtim runtim = new Runtim();
+            runtim.Show();
+        }
     }
 }

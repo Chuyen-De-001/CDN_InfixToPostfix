@@ -18,3 +18,4 @@ D:\CODE\C#\CDN_InfixToPostfix\CDN\obj\Debug\CDN.pdb
 D:\CODE\C#\CDN_InfixToPostfix\CDN\bin\Debug\CDN.exe.config
 D:\CODE\C#\CDN_InfixToPostfix\CDN\bin\Debug\CDN.exe
 D:\CODE\C#\CDN_InfixToPostfix\CDN\bin\Debug\CDN.pdb
+D:\CODE\C#\CDN_InfixToPostfix\CDN\obj\Debug\CDN.Runtim.resources

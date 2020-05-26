@@ -34,12 +34,17 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.radomPolymialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đoThờiGianChạyHàmToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabStack = new System.Windows.Forms.TabPage();
+            this.tabArray = new System.Windows.Forms.TabPage();
+            this.txtResult = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnRun = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabArray.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -68,7 +73,7 @@
             this.btnRadomPolymial.Name = "btnRadomPolymial";
             this.btnRadomPolymial.Size = new System.Drawing.Size(125, 22);
             this.btnRadomPolymial.TabIndex = 2;
-            this.btnRadomPolymial.Text = "Radom Polymial";
+            this.btnRadomPolymial.Text = "Radom Đa Thức";
             this.btnRadomPolymial.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnRadomPolymial.UseVisualStyleBackColor = true;
             this.btnRadomPolymial.Click += new System.EventHandler(this.btnRadomPolymial_Click);
@@ -77,10 +82,11 @@
             // 
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingToolStripMenuItem});
+            this.settingToolStripMenuItem,
+            this.đoThờiGianChạyHàmToolStripMenuItem1});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip2.Size = new System.Drawing.Size(800, 28);
             this.menuStrip2.TabIndex = 5;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -89,22 +95,30 @@
             this.settingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.radomPolymialToolStripMenuItem});
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.settingToolStripMenuItem.Text = "Setting";
+            this.settingToolStripMenuItem.Click += new System.EventHandler(this.settingToolStripMenuItem_Click);
             // 
             // radomPolymialToolStripMenuItem
             // 
             this.radomPolymialToolStripMenuItem.Name = "radomPolymialToolStripMenuItem";
-            this.radomPolymialToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
-            this.radomPolymialToolStripMenuItem.Text = "Radom Polymial";
+            this.radomPolymialToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.radomPolymialToolStripMenuItem.Text = "Radom Đa thức";
             this.radomPolymialToolStripMenuItem.Click += new System.EventHandler(this.radomPolymialToolStripMenuItem_Click);
+            // 
+            // đoThờiGianChạyHàmToolStripMenuItem1
+            // 
+            this.đoThờiGianChạyHàmToolStripMenuItem1.Name = "đoThờiGianChạyHàmToolStripMenuItem1";
+            this.đoThờiGianChạyHàmToolStripMenuItem1.Size = new System.Drawing.Size(173, 24);
+            this.đoThờiGianChạyHàmToolStripMenuItem1.Text = "Đo thời gian chạy hàm";
+            this.đoThờiGianChạyHàmToolStripMenuItem1.Click += new System.EventHandler(this.đoThờiGianChạyHàmToolStripMenuItem1_Click);
             // 
             // tabControl1
             // 
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabStack);
+            this.tabControl1.Controls.Add(this.tabArray);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(15, 119);
@@ -113,15 +127,35 @@
             this.tabControl1.Size = new System.Drawing.Size(773, 319);
             this.tabControl1.TabIndex = 6;
             // 
-            // tabStack
+            // tabArray
             // 
-            this.tabStack.Location = new System.Drawing.Point(4, 25);
-            this.tabStack.Name = "tabStack";
-            this.tabStack.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStack.Size = new System.Drawing.Size(765, 290);
-            this.tabStack.TabIndex = 0;
-            this.tabStack.Text = "Stack";
-            this.tabStack.UseVisualStyleBackColor = true;
+            this.tabArray.Controls.Add(this.txtResult);
+            this.tabArray.Controls.Add(this.label2);
+            this.tabArray.Location = new System.Drawing.Point(4, 25);
+            this.tabArray.Name = "tabArray";
+            this.tabArray.Padding = new System.Windows.Forms.Padding(3);
+            this.tabArray.Size = new System.Drawing.Size(765, 290);
+            this.tabArray.TabIndex = 0;
+            this.tabArray.Text = "Array";
+            this.tabArray.UseVisualStyleBackColor = true;
+            // 
+            // txtResult
+            // 
+            this.txtResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtResult.Location = new System.Drawing.Point(108, 30);
+            this.txtResult.Name = "txtResult";
+            this.txtResult.Size = new System.Drawing.Size(626, 22);
+            this.txtResult.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Kết quả: ";
             // 
             // tabPage2
             // 
@@ -143,11 +177,22 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // btnRun
+            // 
+            this.btnRun.Location = new System.Drawing.Point(370, 90);
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(106, 23);
+            this.btnRun.TabIndex = 8;
+            this.btnRun.Text = "Thực thi";
+            this.btnRun.UseVisualStyleBackColor = true;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRun);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.btnRadomPolymial);
@@ -158,6 +203,8 @@
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabArray.ResumeLayout(false);
+            this.tabArray.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,9 +219,13 @@
         private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem radomPolymialToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabStack;
+        private System.Windows.Forms.TabPage tabArray;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button btnRun;
+        private System.Windows.Forms.TextBox txtResult;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem đoThờiGianChạyHàmToolStripMenuItem1;
     }
 }
 

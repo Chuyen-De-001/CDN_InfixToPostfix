@@ -14,7 +14,7 @@ namespace CDN
             return listOperator[rand.Next(0, 4)];
         }
 
-        static List<Entity.bracket> createBracket(Random rand, int lenght, int maxlenghtBanket)
+        static List<Entity.bracket> taoNgoac(Random rand, int lenght, int maxlenghtBanket)
         {
             List<Entity.bracket> lst = new List<Entity.bracket>();
             int lenghtBanket = rand.Next(0, maxlenghtBanket);// radom so ngoăc có trong da thức.
@@ -31,7 +31,7 @@ namespace CDN
 
         }
 
-        static List<int> createExponential(Random rand, int LenghtDathuc, int maxLenghtExponential)
+        static List<int> taoLuythua(Random rand, int LenghtDathuc, int maxLenghtExponential)
         {
             List<int> lst = new List<int>();
             int LenghtExponential = rand.Next(0, maxLenghtExponential); // phải nhỏ hơn LenghtOperand;
@@ -62,8 +62,8 @@ namespace CDN
             }
             else
             {
-                List<int> lstExponential = createExponential(rand, LenghtOperand, maxLenghtExponential);
-                List<Entity.bracket> lst = createBracket(rand, LenghtOperand, maxlenghtBanket);
+                List<int> lstExponential = taoLuythua(rand, LenghtOperand, maxLenghtExponential);
+                List<Entity.bracket> lst = taoNgoac(rand, LenghtOperand, maxlenghtBanket);
                 for (int i = 0; i < LenghtOperand; i++)
                 {
                     foreach (Entity.bracket item in lst)
@@ -78,7 +78,6 @@ namespace CDN
                     }
                     if (i != LenghtOperand - 1)
                     {
-
                         dathu += taoToanTu(rand);
                     }
                 }
