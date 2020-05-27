@@ -25,6 +25,7 @@ namespace CDN
             string setting = IOFile.docFileSetting();
             string[] lstsetting = setting.Split('-');
             String Dathuc = functions.taoDathuc(int.Parse(lstsetting[0]), int.Parse(lstsetting[1]), int.Parse(lstsetting[2]));
+            Debug.WriteLine(Dathuc);
             txtDathuc.Text = Dathuc;
         }
 
@@ -47,20 +48,21 @@ namespace CDN
             {
                 if(option == "Array")
                 {
-                    Stopwatch sp = new Stopwatch();
                     List<double> lstTime = new List<double>();
                     String result1 = "";
-                    for (int i = 0; i < 10; i++)
+                    int n = 50;
+                    for (int i = 0; i < n; i++)
                     {
+                        Stopwatch sp = new Stopwatch();
                         sp.Start();
                         result1 = new Entity.Array().InfixToPostfix(txtDathuc.Text);
                         sp.Stop();
                         double timeInSecondsPerN = sp.ElapsedMilliseconds;
                         lstTime.Add(timeInSecondsPerN / 1000); 
                     }
-                    for(int i = 1; i < 11; i++)
+                    for(int i = 1; i <= n; i++)
                     {
-                        textRuntime1.Text += "Lần " + i + ": " + lstTime[i - 1] + "s"+Environment.NewLine;
+                        textRuntime1.Text += "Lần " + i + ": " + lstTime[i-1] + "s"+Environment.NewLine;
                     }
                     
                 }

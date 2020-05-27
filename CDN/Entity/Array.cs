@@ -44,6 +44,7 @@ namespace CDN.Entity
         }
         public String InfixToPostfix(string Infix)
         {
+            Debug.WriteLine(Infix.Length);
             String Listtoanhang = "abcdefghimnopqrstuvwxyz1234567890";
             String ListToanTu = "+-*/^";
             char[] arrStack = new char[50];
@@ -98,10 +99,8 @@ namespace CDN.Entity
                         }
                     }
                 }
-                Debug.WriteLine(Postfix);
                 if (i == Infix.Length - 1)
                 {
-                    Debug.Write("dem: " + dem);
                     for (int j = dem - 1; j >= 0; j--)
                     {
                         Postfix += arrStack[j];

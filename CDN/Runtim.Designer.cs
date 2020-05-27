@@ -54,7 +54,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Array",
             "Stack"});
-            this.comboBox1.Location = new System.Drawing.Point(46, 105);
+            this.comboBox1.Location = new System.Drawing.Point(46, 122);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(321, 24);
             this.comboBox1.TabIndex = 1;
@@ -66,7 +66,7 @@
             this.comboBox2.Items.AddRange(new object[] {
             "Array",
             "Stack"});
-            this.comboBox2.Location = new System.Drawing.Point(432, 105);
+            this.comboBox2.Location = new System.Drawing.Point(432, 122);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(321, 24);
             this.comboBox2.TabIndex = 2;
@@ -74,15 +74,17 @@
             // txtDathuc
             // 
             this.txtDathuc.Location = new System.Drawing.Point(46, 50);
+            this.txtDathuc.Multiline = true;
             this.txtDathuc.Name = "txtDathuc";
-            this.txtDathuc.Size = new System.Drawing.Size(558, 22);
+            this.txtDathuc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDathuc.Size = new System.Drawing.Size(558, 47);
             this.txtDathuc.TabIndex = 3;
             // 
             // btnRun
             // 
             this.btnRun.Location = new System.Drawing.Point(619, 49);
             this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(134, 23);
+            this.btnRun.Size = new System.Drawing.Size(134, 48);
             this.btnRun.TabIndex = 4;
             this.btnRun.Text = "Thực thi";
             this.btnRun.UseVisualStyleBackColor = true;
@@ -90,15 +92,16 @@
             // 
             // textRuntime1
             // 
-            this.textRuntime1.Location = new System.Drawing.Point(46, 152);
+            this.textRuntime1.Location = new System.Drawing.Point(46, 169);
             this.textRuntime1.Multiline = true;
             this.textRuntime1.Name = "textRuntime1";
+            this.textRuntime1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textRuntime1.Size = new System.Drawing.Size(321, 225);
             this.textRuntime1.TabIndex = 5;
             // 
             // textRuntime2
             // 
-            this.textRuntime2.Location = new System.Drawing.Point(432, 152);
+            this.textRuntime2.Location = new System.Drawing.Point(432, 169);
             this.textRuntime2.Multiline = true;
             this.textRuntime2.Name = "textRuntime2";
             this.textRuntime2.Size = new System.Drawing.Size(321, 225);

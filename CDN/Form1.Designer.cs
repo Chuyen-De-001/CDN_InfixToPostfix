@@ -62,8 +62,10 @@
             this.txtPolynomial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPolynomial.Location = new System.Drawing.Point(127, 49);
+            this.txtPolynomial.Multiline = true;
             this.txtPolynomial.Name = "txtPolynomial";
-            this.txtPolynomial.Size = new System.Drawing.Size(523, 22);
+            this.txtPolynomial.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtPolynomial.Size = new System.Drawing.Size(523, 61);
             this.txtPolynomial.TabIndex = 1;
             // 
             // btnRadomPolymial
@@ -71,10 +73,9 @@
             this.btnRadomPolymial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRadomPolymial.Location = new System.Drawing.Point(663, 49);
             this.btnRadomPolymial.Name = "btnRadomPolymial";
-            this.btnRadomPolymial.Size = new System.Drawing.Size(125, 22);
+            this.btnRadomPolymial.Size = new System.Drawing.Size(125, 61);
             this.btnRadomPolymial.TabIndex = 2;
             this.btnRadomPolymial.Text = "Radom Đa Thức";
-            this.btnRadomPolymial.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnRadomPolymial.UseVisualStyleBackColor = true;
             this.btnRadomPolymial.Click += new System.EventHandler(this.btnRadomPolymial_Click);
             // 
@@ -102,7 +103,7 @@
             // radomPolymialToolStripMenuItem
             // 
             this.radomPolymialToolStripMenuItem.Name = "radomPolymialToolStripMenuItem";
-            this.radomPolymialToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.radomPolymialToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
             this.radomPolymialToolStripMenuItem.Text = "Radom Đa thức";
             this.radomPolymialToolStripMenuItem.Click += new System.EventHandler(this.radomPolymialToolStripMenuItem_Click);
             // 
@@ -121,10 +122,10 @@
             this.tabControl1.Controls.Add(this.tabArray);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(15, 119);
+            this.tabControl1.Location = new System.Drawing.Point(15, 167);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(773, 319);
+            this.tabControl1.Size = new System.Drawing.Size(773, 271);
             this.tabControl1.TabIndex = 6;
             // 
             // tabArray
@@ -134,7 +135,7 @@
             this.tabArray.Location = new System.Drawing.Point(4, 25);
             this.tabArray.Name = "tabArray";
             this.tabArray.Padding = new System.Windows.Forms.Padding(3);
-            this.tabArray.Size = new System.Drawing.Size(765, 290);
+            this.tabArray.Size = new System.Drawing.Size(765, 242);
             this.tabArray.TabIndex = 0;
             this.tabArray.Text = "Array";
             this.tabArray.UseVisualStyleBackColor = true;
@@ -144,8 +145,10 @@
             this.txtResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtResult.Location = new System.Drawing.Point(108, 30);
+            this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
-            this.txtResult.Size = new System.Drawing.Size(626, 22);
+            this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtResult.Size = new System.Drawing.Size(626, 104);
             this.txtResult.TabIndex = 9;
             // 
             // label2
@@ -179,7 +182,9 @@
             // 
             // btnRun
             // 
-            this.btnRun.Location = new System.Drawing.Point(370, 90);
+            this.btnRun.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRun.Location = new System.Drawing.Point(373, 138);
             this.btnRun.Name = "btnRun";
             this.btnRun.Size = new System.Drawing.Size(106, 23);
             this.btnRun.TabIndex = 8;
@@ -199,7 +204,7 @@
             this.Controls.Add(this.txtPolynomial);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "InfixToPostfix";
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
