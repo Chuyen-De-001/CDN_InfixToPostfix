@@ -30,7 +30,6 @@ namespace CDN
         {
             string setting = IOFile.docFileSetting();
             string[] lstsetting = setting.Split('-');
-            Debug.WriteLine(lstsetting[0] + "-" + lstsetting[1] + "-" + lstsetting[2]);
             String Dathuc = functions.taoDathuc(int.Parse(lstsetting[0]), int.Parse(lstsetting[1]), int.Parse(lstsetting[2]));
             txtPolynomial.Text = Dathuc;
         }
@@ -43,7 +42,13 @@ namespace CDN
             }
             else
             {
-                txtResult.Text = new Entity.Array().InfixToPostfix(txtPolynomial.Text);
+                if(rab_array.Checked == true)
+                {
+                    txtResult.Text = new Entity.Array().InfixToPostfix(txtPolynomial.Text);
+                }else if(raB_stack.Checked == true)
+                {
+
+                }
             }
         }
         private void settingToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,6 +60,16 @@ namespace CDN
         {
             Runtim runtim = new Runtim();
             runtim.Show();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            rab_array.Checked = true;
         }
     }
 }

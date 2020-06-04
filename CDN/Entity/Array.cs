@@ -47,7 +47,7 @@ namespace CDN.Entity
             Debug.WriteLine(Infix.Length);
             String Listtoanhang = "abcdefghimnopqrstuvwxyz1234567890";
             String ListToanTu = "+-*/^";
-            char[] arrStack = new char[50];
+            char[] arrStack = new char[1000000000];
             int dem = 0;
             String Postfix = "";
             for (int i = 0; i < Infix.Length; i++)

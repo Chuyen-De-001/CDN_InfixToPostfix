@@ -28,6 +28,24 @@ namespace CDN
 
         }
 
+/*        public bool ghiFileSetting(List<>)
+        {
+            String dirPath = "../../Setting.txt";
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(dirPath))
+                {
+                    sw.WriteLine(str);
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+        }*/
+
         public String docFileSetting()
         {
             String dirPath = "../../Setting.txt";

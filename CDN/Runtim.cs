@@ -22,11 +22,6 @@ namespace CDN
 
         private void Runtim_Load(object sender, EventArgs e)
         {
-            string setting = IOFile.docFileSetting();
-            string[] lstsetting = setting.Split('-');
-            String Dathuc = functions.taoDathuc(int.Parse(lstsetting[0]), int.Parse(lstsetting[1]), int.Parse(lstsetting[2]));
-            Debug.WriteLine(Dathuc);
-            txtDathuc.Text = Dathuc;
         }
 
         private void btnRun_Click(object sender, EventArgs e)
@@ -67,6 +62,15 @@ namespace CDN
                     
                 }
             }
+        }
+
+        private void btnRadom_Click(object sender, EventArgs e)
+        {
+            string setting = IOFile.docFileSetting();
+            string[] lstsetting = setting.Split('-');
+            String Dathuc = functions.taoDathuc(int.Parse(lstsetting[0]), int.Parse(lstsetting[1]), int.Parse(lstsetting[2]));
+            Debug.WriteLine(Dathuc);
+            txtDathuc.Text = Dathuc;
         }
     }
 }

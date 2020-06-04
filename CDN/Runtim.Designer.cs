@@ -35,6 +35,7 @@
             this.btnRun = new System.Windows.Forms.Button();
             this.textRuntime1 = new System.Windows.Forms.TextBox();
             this.textRuntime2 = new System.Windows.Forms.TextBox();
+            this.btnRadom = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -82,9 +83,9 @@
             // 
             // btnRun
             // 
-            this.btnRun.Location = new System.Drawing.Point(619, 49);
+            this.btnRun.Location = new System.Drawing.Point(619, 74);
             this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(134, 48);
+            this.btnRun.Size = new System.Drawing.Size(134, 23);
             this.btnRun.TabIndex = 4;
             this.btnRun.Text = "Thực thi";
             this.btnRun.UseVisualStyleBackColor = true;
@@ -107,11 +108,22 @@
             this.textRuntime2.Size = new System.Drawing.Size(321, 225);
             this.textRuntime2.TabIndex = 6;
             // 
+            // btnRadom
+            // 
+            this.btnRadom.Location = new System.Drawing.Point(619, 50);
+            this.btnRadom.Name = "btnRadom";
+            this.btnRadom.Size = new System.Drawing.Size(134, 23);
+            this.btnRadom.TabIndex = 7;
+            this.btnRadom.Text = "RadomDaThuc";
+            this.btnRadom.UseVisualStyleBackColor = true;
+            this.btnRadom.Click += new System.EventHandler(this.btnRadom_Click);
+            // 
             // Runtim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRadom);
             this.Controls.Add(this.textRuntime2);
             this.Controls.Add(this.textRuntime1);
             this.Controls.Add(this.btnRun);
@@ -136,5 +148,6 @@
         private System.Windows.Forms.Button btnRun;
         private System.Windows.Forms.TextBox textRuntime1;
         private System.Windows.Forms.TextBox textRuntime2;
+        private System.Windows.Forms.Button btnRadom;
     }
 }
