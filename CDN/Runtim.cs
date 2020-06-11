@@ -26,41 +26,54 @@ namespace CDN
 
         private void btnRun_Click(object sender, EventArgs e)
         {
-            String option = "";
-            try
+            Stopwatch sp = new Stopwatch();
+            if (txtDathuc.Text.Length  < 2)
             {
-                option = comboBox1.SelectedItem.ToString();
-            }
-            catch
-            {
-                option = "";
-            }
-            if(option == "")
-            {
-                MessageBox.Show("error");
+                MessageBox.Show("Chưa nhập đa thức.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if(option == "Array")
+                List<double> lstTime = new List<double>();
+                String result = "";
+                int n = 50;
+                for (int i = 0; i < n; i++)
                 {
-                    List<double> lstTime = new List<double>();
-                    String result1 = "";
-                    int n = 50;
-                    for (int i = 0; i < n; i++)
-                    {
-                        Stopwatch sp = new Stopwatch();
-                        sp.Start();
-                        result1 = new Entity.Array().InfixToPostfix(txtDathuc.Text);
-                        sp.Stop();
-                        double timeInSecondsPerN = sp.ElapsedMilliseconds;
-                        lstTime.Add(timeInSecondsPerN / 1000); 
-                    }
-                    for(int i = 1; i <= n; i++)
-                    {
-                        textRuntime1.Text += "Lần " + i + ": " + lstTime[i-1] + "s"+Environment.NewLine;
-                    }
-                    
+                    sp.Restart();
+                    sp.Start();
+                    result = new Entity.Array().InfixToPostfix(txtDathuc.Text);
+                    sp.Stop();
+                    double timeInSecondsPerN = sp.ElapsedMilliseconds;
+                    lstTime.Add(timeInSecondsPerN / 1000);
                 }
+                double tong = 0;
+                for (int i = 0; i < n; i++)
+                {
+                    textRuntime1.Text += "Lần " + i + ": " + lstTime[i] + "s" + Environment.NewLine;
+                    tong += lstTime[i];
+                }
+                textRuntime1.Text += "Trung bình thời gian là: " + (tong / 50);
+
+
+                List<double> lstTime1 = new List<double>();
+                double tong1 = 0;
+                String result1 = "";
+                for (int i = 0; i < n; i++)
+                {
+
+                    sp.Restart();
+                    sp.Start();
+                    result1 = new Entity.stack().InfixToPostfix(txtDathuc.Text);
+                    sp.Stop();
+                    double timeInSecondsPerN = sp.ElapsedMilliseconds;
+                    Debug.WriteLine(i);
+                    lstTime1.Add(timeInSecondsPerN / 1000);
+                }
+                for (int i = 0; i < n; i++)
+                {
+                    textRuntime2.Text += "Lần " + i + ": " + lstTime1[i] + "s" + Environment.NewLine;
+                    tong1 += lstTime1[i];
+                }
+                textRuntime2.Text += "Trung bình thời gian là: " + (tong1 / 50);
             }
         }
 

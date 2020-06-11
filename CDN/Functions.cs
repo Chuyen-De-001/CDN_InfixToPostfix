@@ -70,17 +70,18 @@ namespace CDN
                     {
                         if (item.vStart == i) { dathu += "("; }
                     }
-                    if(IndexOperand < 23)
-                    {
-                        dathu += listOperand[IndexOperand];
-                        IndexOperand++;
-                    }
-                    else
-                    {
-                        IndexOperand = 0;
-                        dathu += listOperand[IndexOperand];
-                        IndexOperand++;
-                    }
+                    /*                    if(IndexOperand < 23)
+                                        {
+                                            dathu += listOperand[IndexOperand];
+                                            IndexOperand++;
+                                        }
+                                        else
+                                        {
+                                            IndexOperand = 0;
+                                            dathu += listOperand[IndexOperand];
+                                            IndexOperand++;
+                                        }*/
+                    dathu += listOperand[i % 23];
                     if (lstExponential.Any(item => item == i)) { dathu += "^" + rand.Next(2, 10); }
                     foreach (Entity.bracket item in lst)
                     {
