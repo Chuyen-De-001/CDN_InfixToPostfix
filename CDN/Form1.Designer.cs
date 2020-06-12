@@ -40,21 +40,22 @@
             this.raB_stack = new System.Windows.Forms.RadioButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnRun_tab1 = new System.Windows.Forms.Button();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.flpInfix = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnRun = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnReset = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.flpOutPut = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.flpStack = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnRun_tab1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.flpOutPut = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnRun = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.flpInfix = new System.Windows.Forms.FlowLayoutPanel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnStepbyStep_tab1 = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -180,6 +181,16 @@
             this.tabPage1.Text = "Kết quả";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnRun_tab1
+            // 
+            this.btnRun_tab1.Location = new System.Drawing.Point(177, 21);
+            this.btnRun_tab1.Name = "btnRun_tab1";
+            this.btnRun_tab1.Size = new System.Drawing.Size(95, 40);
+            this.btnRun_tab1.TabIndex = 14;
+            this.btnRun_tab1.Text = "Thực thi";
+            this.btnRun_tab1.UseVisualStyleBackColor = true;
+            this.btnRun_tab1.Click += new System.EventHandler(this.btnRun_tab1_Click);
+            // 
             // txtResult
             // 
             this.txtResult.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -203,6 +214,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnStepbyStep_tab1);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.flpStack);
             this.tabPage2.Controls.Add(this.label5);
@@ -220,94 +232,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Biểu diễn";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 17);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Infix";
-            // 
-            // flpInfix
-            // 
-            this.flpInfix.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpInfix.Location = new System.Drawing.Point(4, 90);
-            this.flpInfix.Name = "flpInfix";
-            this.flpInfix.Size = new System.Drawing.Size(755, 44);
-            this.flpInfix.TabIndex = 0;
-            // 
-            // btnRun
-            // 
-            this.btnRun.Location = new System.Drawing.Point(176, 6);
-            this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(106, 43);
-            this.btnRun.TabIndex = 9;
-            this.btnRun.Text = "Thực thi";
-            this.btnRun.UseVisualStyleBackColor = true;
-            this.btnRun.Click += new System.EventHandler(this.btnRun_Click_1);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(304, 6);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(106, 43);
-            this.btnReset.TabIndex = 10;
-            this.btnReset.Text = "Làm lại";
-            this.btnReset.UseVisualStyleBackColor = true;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(638, 17);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 11;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(551, 19);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 17);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Delay (ms):";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 219);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 17);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Output";
-            // 
-            // flpOutPut
-            // 
-            this.flpOutPut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpOutPut.Location = new System.Drawing.Point(6, 242);
-            this.flpOutPut.Name = "flpOutPut";
-            this.flpOutPut.Size = new System.Drawing.Size(755, 44);
-            this.flpOutPut.TabIndex = 13;
             // 
             // label6
             // 
@@ -327,15 +251,104 @@
             this.flpStack.Size = new System.Drawing.Size(755, 44);
             this.flpStack.TabIndex = 15;
             // 
-            // btnRun_tab1
+            // label5
             // 
-            this.btnRun_tab1.Location = new System.Drawing.Point(177, 21);
-            this.btnRun_tab1.Name = "btnRun_tab1";
-            this.btnRun_tab1.Size = new System.Drawing.Size(95, 40);
-            this.btnRun_tab1.TabIndex = 14;
-            this.btnRun_tab1.Text = "Thực thi";
-            this.btnRun_tab1.UseVisualStyleBackColor = true;
-            this.btnRun_tab1.Click += new System.EventHandler(this.btnRun_tab1_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 219);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 17);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Output";
+            // 
+            // flpOutPut
+            // 
+            this.flpOutPut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpOutPut.Location = new System.Drawing.Point(6, 242);
+            this.flpOutPut.Name = "flpOutPut";
+            this.flpOutPut.Size = new System.Drawing.Size(755, 44);
+            this.flpOutPut.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(551, 19);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 17);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Delay (ms):";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(638, 17);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown1.TabIndex = 11;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(273, 6);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(106, 43);
+            this.btnReset.TabIndex = 10;
+            this.btnReset.Text = "Làm lại";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnRun
+            // 
+            this.btnRun.Location = new System.Drawing.Point(145, 6);
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(106, 43);
+            this.btnRun.TabIndex = 9;
+            this.btnRun.Text = "Thực thi";
+            this.btnRun.UseVisualStyleBackColor = true;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click_1);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 17);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Infix";
+            // 
+            // flpInfix
+            // 
+            this.flpInfix.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpInfix.Location = new System.Drawing.Point(4, 90);
+            this.flpInfix.Name = "flpInfix";
+            this.flpInfix.Size = new System.Drawing.Size(755, 44);
+            this.flpInfix.TabIndex = 0;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnStepbyStep_tab1
+            // 
+            this.btnStepbyStep_tab1.Location = new System.Drawing.Point(407, 6);
+            this.btnStepbyStep_tab1.Name = "btnStepbyStep_tab1";
+            this.btnStepbyStep_tab1.Size = new System.Drawing.Size(106, 43);
+            this.btnStepbyStep_tab1.TabIndex = 17;
+            this.btnStepbyStep_tab1.Text = "Từng bước";
+            this.btnStepbyStep_tab1.UseVisualStyleBackColor = true;
+            this.btnStepbyStep_tab1.Click += new System.EventHandler(this.btnStepbyStep_tab1_Click);
             // 
             // Form1
             // 
@@ -391,6 +404,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.FlowLayoutPanel flpStack;
         private System.Windows.Forms.Button btnRun_tab1;
+        private System.Windows.Forms.Button btnStepbyStep_tab1;
     }
 }
 

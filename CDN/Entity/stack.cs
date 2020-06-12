@@ -62,8 +62,7 @@ namespace CDN.Entity
                     }
                     else
                     {
-                        char tg = item;
-                        if (getdoUutien(stack.Peek()) < getdoUutien(tg) || stack.Peek() == '(')
+                        if (getdoUutien(stack.Peek()) < getdoUutien(item) || stack.Peek() == '(')
                         {
                             stack.Push(item);
                         }

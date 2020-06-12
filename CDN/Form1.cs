@@ -65,12 +65,15 @@ namespace CDN
 
         private void btnRun_Click_1(object sender, EventArgs e)
         {
-            string infix = exprHelper.FormatExpression(txtPolynomial.Text);
-            string[] tokens = infix.Split(' ');
+
             if (!_isInProcess)
             {
+                btnReset_Click(sender, e);
+                string infix = exprHelper.FormatExpression(txtPolynomial.Text);
+                string[] tokens = infix.Split(' ');
                 for (int i = 0; i < tokens.Count() - 1; i++)
                 {
+
                     Label lab = new Label();
                     lab.TextAlign = ContentAlignment.MiddleCenter;
                     lab.Text = tokens[i];
@@ -87,9 +90,16 @@ namespace CDN
             else
             {
                 if (_isInProcess)
-                    btnRun.Text = "Resume";
-                else
-                    btnRun.Text = "Start";
+                {
+                    if (btnRun.Text != "Tiếp tục")
+                    {
+                        btnRun.Text = "Tiếp tục";
+                    }
+                    else
+                    {
+                        btnRun.Text = "Dừng";
+                    }
+                }
             }
             _isInProcess = true;
             timer1.Enabled = !timer1.Enabled;
@@ -98,6 +108,11 @@ namespace CDN
         private void timer1_Tick(object sender, EventArgs e)
         {
             StepForward();
+            if(flpStack.Controls.Count == 0)
+            {
+                btnRun.Text = "Thực thi";
+                _isInProcess = false;
+            }
         }
         public void StepForward()
         {
@@ -107,6 +122,12 @@ namespace CDN
                 ctl.BackgroundImage = Properties.Resources.highlightCircle;
                 flpInfix.Controls.Remove(ctl);
                 ProcessInfixPostfix(ctl);
+            }else if(flpInfix.Controls.Count == 0 && flpStack.Controls.Count > 0)
+            {
+                if (PeekStack().Text != "(")
+                {
+                    Output(PopStack());
+                }
             }
         }
 
@@ -123,6 +144,12 @@ namespace CDN
                 }
                 else
                 {
+                    if (stack.getdoUutien(char.Parse(PeekStack().Text)) < stack.getdoUutien(char.Parse(ctl.Text)) || char.Parse(PeekStack().Text) == '(')
+                    {
+                        PushStack(ctl);
+                    }
+                    else
+                    {
                     while (stack.getdoUutien(char.Parse(PeekStack().Text)) >= stack.getdoUutien(char.Parse(ctl.Text)))
                     {
                         if (flpStack.Controls.Count == 1)
@@ -133,9 +160,8 @@ namespace CDN
                         }
                         else
                         {
-                            //postfix += stack.Pop();
                             Output(PopStack());
-                            if (stack.getdoUutien(char.Parse(PeekStack().Text)) >= stack.getdoUutien(char.Parse(ctl.Text)))
+                            if (stack.getdoUutien(char.Parse(PeekStack().Text)) < stack.getdoUutien(char.Parse(ctl.Text)))
                             {
                                 PushStack(ctl);
                                 break;
@@ -143,6 +169,8 @@ namespace CDN
                         }
 
                     }
+                    }
+
                 }
             }
             else if (ctl.Text == "(")
@@ -164,15 +192,15 @@ namespace CDN
         {
             flpOutPut.Controls.Add(ctl);
 
-/*            if (flpOutPut.Controls.Count > 1)
-                flpOutPut.Controls[flpOutPut.Controls.Count - 2].BackgroundImage = Properties.Resources.NormalCircle;*/
+            if (flpOutPut.Controls.Count > 1)
+                flpOutPut.Controls[flpOutPut.Controls.Count - 2].BackgroundImage = Properties.Resources.NormalCircle;
         }
         void PushStack(Control ctl)
         {
             flpStack.Controls.Add(ctl);
-/*
+
             if (flpStack.Controls.Count > 1)
-                flpStack.Controls[flpStack.Controls.Count - 2].BackgroundImage = Properties.Resources.NormalCircle;*/
+                flpStack.Controls[flpStack.Controls.Count - 2].BackgroundImage = Properties.Resources.NormalCircle;
         }
         Control PeekStack()
         {
@@ -195,6 +223,30 @@ namespace CDN
                 {
                     txtResult.Text = new Entity.stack().InfixToPostfix(txtPolynomial.Text);
                 }
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            flpInfix.Controls.Clear();
+            flpOutPut.Controls.Clear();
+            flpStack.Controls.Clear();
+            _isInProcess = false;
+            timer1.Enabled = false;
+            btnRun.Text = "Thực thi";
+
+
+        }
+
+        private void btnStepbyStep_tab1_Click(object sender, EventArgs e)
+        {
+            if (!timer1.Enabled)
+            {
+                btnRun_Click_1(sender, e);
+                btnRun.Text = "Tiếp tục";
+                /*timer1.Stop();*/
+                timer1.Enabled = false;
+                StepForward();
             }
         }
 
