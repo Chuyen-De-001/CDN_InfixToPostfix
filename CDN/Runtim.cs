@@ -44,6 +44,7 @@ namespace CDN
                     sp.Stop();
                     double timeInSecondsPerN = sp.ElapsedMilliseconds;
                     lstTime.Add(timeInSecondsPerN / 1000);
+                    sp.Reset();
                 }
                 double tong = 0;
                 for (int i = 0; i < n; i++)
@@ -51,6 +52,10 @@ namespace CDN
                     textRuntime1.Text += "Lần " + i + ": " + lstTime[i] + "s" + Environment.NewLine;
                     tong += lstTime[i];
                 }
+                /*                foreach (Double item in lstTime)
+                                {
+                                    textRuntime1.Text +=item + "s" + Environment.NewLine;
+                                }*/
                 textRuntime1.Text += "Trung bình thời gian là: " + (tong / 50);
 
 
@@ -67,6 +72,7 @@ namespace CDN
                     double timeInSecondsPerN = sp.ElapsedMilliseconds;
                     Debug.WriteLine(i);
                     lstTime1.Add(timeInSecondsPerN / 1000);
+                    sp.Reset();
                 }
                 for (int i = 0; i < n; i++)
                 {

@@ -96,23 +96,26 @@ namespace CDN.Entity
                 {
                     stack.Push(item);
                 }
-                //else if (item == ')')
-                //{
-                //    while (stack.Peek() != '(')
-                //    {
-                //        postfix += stack.Pop();
+                else if (item == ')')
+                {
+                    while (stack.Peek() != '(')
+                    {
+                        postfix += stack.Pop();
 
-                //    }
-                //    stack.Pop();
-                //}
+                    }
+                    stack.Pop();
+                }
 
             }
-            for (int i = 0; i < stack.Count; i++)
+            while (stack.Count > 0)
             {
-                if (stack.Peek() != '(')
-                {
+                 if (stack.Peek() != '(')
+                 {
                     postfix += stack.Pop();
                 }
+                else { stack.Pop(); }
+                
+ 
             }
 
 

@@ -44,6 +44,7 @@
             this.txtResult = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnStepbyStep_tab1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.flpStack = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,7 +56,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.flpInfix = new System.Windows.Forms.FlowLayoutPanel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnStepbyStep_tab1 = new System.Windows.Forms.Button();
+            this.textBox_Sl = new System.Windows.Forms.TextBox();
+            this.txttime = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -119,7 +122,7 @@
             // radomPolymialToolStripMenuItem
             // 
             this.radomPolymialToolStripMenuItem.Name = "radomPolymialToolStripMenuItem";
-            this.radomPolymialToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.radomPolymialToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.radomPolymialToolStripMenuItem.Text = "Radom Đa thức";
             this.radomPolymialToolStripMenuItem.Click += new System.EventHandler(this.radomPolymialToolStripMenuItem_Click);
             // 
@@ -168,6 +171,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.txttime);
             this.tabPage1.Controls.Add(this.btnRun_tab1);
             this.tabPage1.Controls.Add(this.txtResult);
             this.tabPage1.Controls.Add(this.raB_stack);
@@ -232,6 +237,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Biểu diễn";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnStepbyStep_tab1
+            // 
+            this.btnStepbyStep_tab1.Location = new System.Drawing.Point(407, 6);
+            this.btnStepbyStep_tab1.Name = "btnStepbyStep_tab1";
+            this.btnStepbyStep_tab1.Size = new System.Drawing.Size(106, 43);
+            this.btnStepbyStep_tab1.TabIndex = 17;
+            this.btnStepbyStep_tab1.Text = "Từng bước";
+            this.btnStepbyStep_tab1.UseVisualStyleBackColor = true;
+            this.btnStepbyStep_tab1.Click += new System.EventHandler(this.btnStepbyStep_tab1_Click);
             // 
             // label6
             // 
@@ -340,21 +355,35 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnStepbyStep_tab1
+            // textBox_Sl
             // 
-            this.btnStepbyStep_tab1.Location = new System.Drawing.Point(407, 6);
-            this.btnStepbyStep_tab1.Name = "btnStepbyStep_tab1";
-            this.btnStepbyStep_tab1.Size = new System.Drawing.Size(106, 43);
-            this.btnStepbyStep_tab1.TabIndex = 17;
-            this.btnStepbyStep_tab1.Text = "Từng bước";
-            this.btnStepbyStep_tab1.UseVisualStyleBackColor = true;
-            this.btnStepbyStep_tab1.Click += new System.EventHandler(this.btnStepbyStep_tab1_Click);
+            this.textBox_Sl.Location = new System.Drawing.Point(15, 90);
+            this.textBox_Sl.Name = "textBox_Sl";
+            this.textBox_Sl.Size = new System.Drawing.Size(100, 22);
+            this.textBox_Sl.TabIndex = 15;
+            // 
+            // txttime
+            // 
+            this.txttime.Location = new System.Drawing.Point(82, 440);
+            this.txttime.Name = "txttime";
+            this.txttime.Size = new System.Drawing.Size(501, 22);
+            this.txttime.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 441);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 17);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Thời gian";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 706);
+            this.Controls.Add(this.textBox_Sl);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.btnRadomPolymial);
@@ -405,6 +434,9 @@
         private System.Windows.Forms.FlowLayoutPanel flpStack;
         private System.Windows.Forms.Button btnRun_tab1;
         private System.Windows.Forms.Button btnStepbyStep_tab1;
+        private System.Windows.Forms.TextBox textBox_Sl;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txttime;
     }
 }
 

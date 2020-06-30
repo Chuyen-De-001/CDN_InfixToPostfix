@@ -53,7 +53,7 @@ namespace CDN
             string dathu = "";
             string listOperand = "abcdefghimnopqrstuvwxyz";
             int IndexOperand = 0;
-            int LenghtDathuc = rand.Next(2, maxLenghtDathuc); //radom độ dài đa thức.
+            int LenghtDathuc = maxLenghtDathuc; //radom độ dài đa thức.
             if(LenghtDathuc == 2)
             {
                 dathu += "a";

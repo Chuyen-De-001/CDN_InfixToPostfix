@@ -36,7 +36,7 @@ namespace CDN
         {
             string setting = IOFile.docFileSetting();
             string[] lstsetting = setting.Split('-');
-            String Dathuc = functions.taoDathuc(int.Parse(lstsetting[0]), int.Parse(lstsetting[1]), int.Parse(lstsetting[2]));
+            String Dathuc = functions.taoDathuc(int.Parse(textBox_Sl.Text), int.Parse(lstsetting[1]), int.Parse(lstsetting[2]));
             Debug.WriteLine(Dathuc);
             txtPolynomial.Text = Dathuc;
         }
@@ -108,11 +108,6 @@ namespace CDN
         private void timer1_Tick(object sender, EventArgs e)
         {
             StepForward();
-            if(flpStack.Controls.Count == 0)
-            {
-                btnRun.Text = "Thực thi";
-                _isInProcess = false;
-            }
         }
         public void StepForward()
         {
@@ -128,6 +123,11 @@ namespace CDN
                 {
                     Output(PopStack());
                 }
+            }else if(flpInfix.Controls.Count == 0 && flpStack.Controls.Count == 0)
+            {
+                _isInProcess = false;
+                timer1.Enabled = false;
+                btnRun.Text = "Thực thi";
             }
         }
 
@@ -209,6 +209,7 @@ namespace CDN
 
         private void btnRun_tab1_Click(object sender, EventArgs e)
         {
+            Stopwatch sp = new Stopwatch();
             if (txtPolynomial.Text == "")
             {
                 MessageBox.Show("Chưa nhập đa thức", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -221,7 +222,14 @@ namespace CDN
                 }
                 else if (raB_stack.Checked == true)
                 {
+                    sp.Start();
+                   
                     txtResult.Text = new Entity.stack().InfixToPostfix(txtPolynomial.Text);
+                    sp.Stop();
+                    double timeInSecondsPerN = sp.ElapsedMilliseconds;
+                    txttime.Text = (timeInSecondsPerN/1000).ToString();
+
+
                 }
             }
         }
